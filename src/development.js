@@ -1,8 +1,11 @@
 import { getForceUpdate, createProxy } from 'react-proxy';
+import window from 'global/window';
 
-let componentProxies = {};
-if (typeof window !== 'undefined') {
-  componentProxies = window.__reactComponentProxies || {};
+let componentProxies;
+if (window.__reactComponentProxies) {
+  componentProxies = window.__reactComponentProxies;
+} else {
+  componentProxies = {};
   Object.defineProperty(window, '__reactComponentProxies', {
     configurable: false,
     enumerable: false,
@@ -34,14 +37,18 @@ export default function proxyReactComponents({ filename, components, imports, lo
   const forceUpdate = getForceUpdate(React);
 
   return function wrapWithProxy(ReactClass, uniqueId) {
-    const { isInFunction = false } = components[uniqueId];
+    const {
+      isInFunction = false,
+      displayName = uniqueId
+    } = components[uniqueId];
+
     if (isInFunction) {
       return ReactClass;
     }
 
     const globalUniqueId = filename + '$' + uniqueId;
     if (componentProxies[globalUniqueId]) {
-      console.info('[React HMR] Patching ' + uniqueId);
+      console.info('[React HMR] Patching ' + displayName);
       const instances = componentProxies[globalUniqueId].update(ReactClass);
       setTimeout(() => instances.forEach(forceUpdate));
     } else {
