@@ -23,7 +23,12 @@ export default function proxyReactComponents({ filename, components, imports, lo
   }
 
   if (Object.keys(components).some(key => !components[key].isInFunction)) {
-    hot.accept();
+    hot.accept(err => {
+      if (err) {
+        console.warn(`[React HMR] There was an error updating ${filename}:`);
+        console.error(err);
+      }
+    });
   }
 
   const forceUpdate = getForceUpdate(React);
