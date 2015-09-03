@@ -36,7 +36,7 @@ export default function proxyReactComponents({ filename, components, imports, lo
 
     const globalUniqueId = filename + '$' + uniqueId;
     if (componentProxies[globalUniqueId]) {
-      console.info('[React Hot Loader] Patching ' + uniqueId);
+      console.info('[React HMR] Patching ' + uniqueId);
       const instances = componentProxies[globalUniqueId].update(ReactClass);
       setTimeout(() => instances.forEach(forceUpdate));
     } else {
