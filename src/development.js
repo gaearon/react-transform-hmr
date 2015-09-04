@@ -7,7 +7,7 @@ if (window.__reactComponentProxies) {
 } else {
   componentProxies = {};
   Object.defineProperty(window, '__reactComponentProxies', {
-    configurable: false,
+    configurable: true,
     enumerable: false,
     writable: false,
     value: componentProxies
