@@ -4,7 +4,7 @@ A [React Transform](https://github.com/gaearon/babel-plugin-react-transform) equ
 
 ## Installation
 
-First, install the [Babel plugin](https://raw.githubusercontent.com/gaearon/babel-plugin-react-transform):
+First, install the [Babel plugin](https://github.com/gaearon/babel-plugin-react-transform):
 
 ```
 npm install --save-dev babel-plugin-react-transform
