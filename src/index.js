@@ -19,10 +19,18 @@ export default function proxyReactComponents({ filename, components, imports, lo
   const [{ hot }] = locals;
 
   if (!React.Component) {
-    throw new Error('imports[0] for react-transform-webpack-hmr does not look like React.');
+    throw new Error(
+      'imports[0] for react-transform-hmr does not look like React.'
+    );
   }
-  if (!hot) {
-    return ReactClass => ReactClass;
+
+  if (!hot || typeof hot.accept !== 'function') {
+    throw new Error(
+      'locals[0] does not appear to be a `module` object with Hot Module ' +
+      'replacement API enabled. You should disable react-transform-hmr in ' +
+      'production by using `env` section in Babel configuration. See the ' +
+      'example in README: https://github.com/gaearon/react-transform-hmr'
+    );
   }
 
   if (Object.keys(components).some(key => !components[key].isInFunction)) {
