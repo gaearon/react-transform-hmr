@@ -1,6 +1,8 @@
-# react-transform-webpack-hmr
+# react-transform-hmr
 
-A [React Transform](https://github.com/gaearon/babel-plugin-react-transform) equivalent to [React Hot Loader](https://github.com/gaearon/react-hot-loader).
+A React Transform that enables hot reloading React classes using Hot Module Replacement API.
+
+Hot module replacement is [supported natively by Webpack](http://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and available in Browserify with [browserify-hmr](https://github.com/AgentME/browserify-hmr).
 
 ## Installation
 
@@ -13,7 +15,7 @@ npm install --save-dev babel-plugin-react-transform
 Then, install the transform:
 
 ```
-npm install --save-dev react-transform-webpack-hmr
+npm install --save-dev react-transform-hmr
 ```
 
 Then edit your `.babelrc` to include `extra.babel-plugin-react-transform`.  
@@ -28,7 +30,7 @@ It must be an array of the transforms you want to use:
   "extra": {
     // must be defined and be an array
     "react-transform": [{
-      "target": "react-transform-webpack-hmr",
+      "target": "react-transform-hmr",
       // if you use React Native, pass "react-native" instead:
       "imports": ["react"],
       // this is important for Webpack HMR:

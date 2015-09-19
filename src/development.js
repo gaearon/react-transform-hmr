@@ -28,7 +28,7 @@ export default function proxyReactComponents({ filename, components, imports, lo
   if (Object.keys(components).some(key => !components[key].isInFunction)) {
     hot.accept(err => {
       if (err) {
-        console.warn(`[React HMR] There was an error updating ${filename}:`);
+        console.warn(`[React Transform HMR] There was an error updating ${filename}:`);
         console.error(err);
       }
     });
@@ -48,7 +48,7 @@ export default function proxyReactComponents({ filename, components, imports, lo
 
     const globalUniqueId = filename + '$' + uniqueId;
     if (componentProxies[globalUniqueId]) {
-      console.info('[React HMR] Patching ' + displayName);
+      console.info('[React Transform HMR] Patching ' + displayName);
       const instances = componentProxies[globalUniqueId].update(ReactClass);
       setTimeout(() => instances.forEach(forceUpdate));
     } else {
