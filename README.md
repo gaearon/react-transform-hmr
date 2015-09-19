@@ -6,7 +6,7 @@ Hot module replacement is [supported natively by Webpack](http://webpack.github.
 
 ## Installation
 
-First, install the [Babel plugin](https://raw.githubusercontent.com/gaearon/babel-plugin-react-transform):
+First, install the [Babel plugin](https://github.com/gaearon/babel-plugin-react-transform):
 
 ```
 npm install --save-dev babel-plugin-react-transform
