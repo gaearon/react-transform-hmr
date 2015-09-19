@@ -24,12 +24,10 @@ It must be an array of the transforms you want to use:
 ```js
 {
   "stage": 0,
-  "plugins": [
-    "react-transform"
-  ],
   "env": {
     // only enable it when process.env.NODE_ENV is not 'production'
     "development": {
+      "plugins": ["react-transform"],
       "extra": {
         // must be defined and be an array
         "react-transform": [{
