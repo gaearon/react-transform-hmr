@@ -1,6 +1,6 @@
 {
   "name": "react-transform-hmr",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A React Transform that enables hot reloading React classes using Hot Module Replacement API",
   "main": "lib/index.js",
   "repository": {
