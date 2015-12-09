@@ -1,5 +1,7 @@
 # react
 
+[![react-transform channel on discord](https://img.shields.io/badge/discord-react--transform%40reactiflux-61DAFB.svg?style=flat-square)](http://www.reactiflux.com)
+
 A [React Transform](https://github.com/gaearon/babel-plugin-react-transform) that enables hot reloading React classes using Hot Module Replacement API. Hot module replacement is [supported natively by Webpack](http://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and available in Browserify with [browserify-hmr](https://github.com/AgentME/browserify-hmr).
 
 ## Installation
