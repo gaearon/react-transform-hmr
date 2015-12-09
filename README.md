@@ -1,4 +1,4 @@
-# react
+# react-transform-hmr
 
 [![react-transform channel on discord](https://img.shields.io/badge/discord-react--transform%40reactiflux-61DAFB.svg?style=flat-square)](http://www.reactiflux.com)
 
