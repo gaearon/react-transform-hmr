@@ -25,25 +25,21 @@ It must be an array of the transforms you want to use:
 
 ```js
 {
-  "stage": 0,
+  "presets": ["es2015", "stage-0"],
   "env": {
     // only enable it when process.env.NODE_ENV is 'development' or undefined
     "development": {
-      "plugins": ["react-transform"],
-      "extra": {
-        // must be defined and be an object
-        "react-transform": {
-          "transforms": [{
-            "transform": "react-transform-hmr",
-            // if you use React Native, pass "react-native" instead:
-            "imports": ["react"],
-            // this is important for Webpack HMR:
-            "locals": ["module"]
-          }]
-          // note: you can put more transforms into array
-          // this is just one of them!
-        }
-      }
+      "plugins": [["react-transform", {
+        "transforms": [{
+          "transform": "react-transform-hmr",
+          // if you use React Native, pass "react-native" instead:
+          "imports": ["react"],
+          // this is important for Webpack HMR:
+          "locals": ["module"]
+        }]
+        // note: you can put more transforms into array
+        // this is just one of them!
+      }]]
     }
   }
 }
