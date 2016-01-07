@@ -49,6 +49,8 @@ Make sure you process files with `babel-loader`, and that you *don’t* use Reac
 
 **It is up to you to ensure that the transform is not enabled when you compile the app in production mode.** The easiest way to do this is to put React Transform configuration inside `env.development` in `.babelrc` and ensure you’re calling `babel` with `NODE_ENV=production`. See [babelrc documentation](https://babeljs.io/docs/usage/babelrc/#env-option) for more details about using `env` option.
 
+**Warning!** This doesn't currently work for stateless functional components that were introduced in [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html#stateless-functional-components)!
+
 ### React Native
 
 This transform enables hot reloading when used together with [React Native Webpack Server](https://github.com/mjohnston/react-native-webpack-server). **However note that you should not use `.babelrc` to configure it with React Native.** Otherwise you’ll get [`Uncaught SyntaxError: Unexpected reserved word` in `ActivityIndicatorIOS.ios.js`](https://github.com/mjohnston/react-native-webpack-server/issues/57#issuecomment-141487449).
