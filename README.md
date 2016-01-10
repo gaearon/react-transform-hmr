@@ -20,8 +20,7 @@ npm install --save-dev react-transform-hmr
 
 ### React
 
-Edit your `.babelrc` to include `extra.babel-plugin-react-transform`.  
-It must be an array of the transforms you want to use:
+Edit your `.babelrc` to include a plugin configuration for `react-transform`. It contains array of the transforms you want to use:
 
 ```js
 {
