@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "A React Transform that enables hot reloading React classes using Hot Module Replacement API",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gaearon/react-transform-hmr.git"
