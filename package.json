@@ -37,7 +37,7 @@
   ],
   "dependencies": {
     "global": "^4.3.0",
-    "react-proxy": "^1.1.6"
+    "react-proxy": "^1.1.7"
   },
   "devDependencies": {
     "babel": "^5.8.23",
